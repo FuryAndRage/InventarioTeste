@@ -1,0 +1,42 @@
+<!-- Sidebar -->
+<div class="bg-dark text-white border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">Inventario</div>
+    <div class="list-group list-group-flush">
+        <li class=" list-group-item-action list-unstyled text-white bg-dark">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle list-group-item text-white list-group-item-action bg-dark">Produtos</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="{%url 'produto:lista_produto'%}"
+                        class="list-group-item text-white list-group-item-action bg-dark">Lista de Produtos</a>
+                </li>
+                <li>
+                    <a href="{%url 'produto:novo_produto'%}"
+                        class="list-group-item text-white list-group-item-action bg-dark">Novo Produto</a>
+                </li>
+                <li>
+                    <a href="#" class="list-group-item text-white list-group-item-action bg-dark">Home 3</a>
+                </li>
+            </ul>
+        </li>
+        <li class=" list-group-item-action list-unstyled text-white bg-dark">
+            <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false"
+                class="dropdown-toggle list-group-item text-white list-group-item-action bg-dark">Fornecedores</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu2">
+                <li>
+                    <a href="#" class="list-group-item text-white list-group-item-action bg-dark">Lista de
+                        Fornecedores</a>
+                </li>
+                <li>
+                    <a href="#" class="list-group-item text-white list-group-item-action bg-dark">Novo Fornecedor</a>
+                </li>
+                <li>
+                    <a href="#" class="list-group-item text-white list-group-item-action bg-dark">Home 3</a>
+                </li>
+            </ul>
+        </li>
+        <a href="#" class="list-group-item text-white list-group-item-action bg-dark">Dashboard</a>
+
+    </div>
+</div>
+<!-- /#sidebar-wrapper -->

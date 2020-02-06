@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load mfilters %}
+
+{% block main %}
+{% include 'includes/_messages.html' %}
+<div class="row mt-3">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Valor em Produtos</h5>
+        <p class="card-text">{% for produto in produtos%}{{produto.soma_venda}}{% endfor %}</p>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Lucro de Vendas</h5>
+        <p class="card-text"></p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped mt-3">
+    <thead class="thead thead-dark">
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Descricao</th>
+        <th>Preco de Compra</th>
+        <th>Preco de Venda</th>
+        <th></th>
+    </thead>
+    {% for produto in produtos %}
+    <tbody>
+        <td>{{produto.nome_produto}}</td>
+        <td>{{produto.quantidade_produto}}</td>
+        <td>{{produto.descricao_produto}}</td>
+        <td>${{produto.compra_produto}}</td>
+        <td>${{produto.venda_produto}}</td>
+        <td><a href=""><button class="btn btn-info">Baixa</button></a></td>
+
+    </tbody>
+    {% endfor %}
+</table>
+
+{% include 'includes/_pagination.html' %}
+{% endblock main %}
