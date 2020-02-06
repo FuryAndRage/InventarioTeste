@@ -15,12 +15,6 @@ class ProdutoList(ListView):
     paginate_by = 10
     ordering = '-id'
 
-    def get_queryset(self):
-
-        qs = super().get_queryset()
-
-        return qs
-
 
 class ProdutoCreate(CreateView):
     model = Produto

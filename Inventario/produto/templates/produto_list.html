@@ -8,7 +8,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Valor em Produtos</h5>
-        <p class="card-text">{% for produto in produtos%}{{produto.soma_venda}}{% endfor %}</p>
+        <p class="card-text">{% for produto in produtos  %}{{total_compra_produto.total}}{% endfor %}</p>
         
       </div>
     </div>
@@ -35,6 +35,7 @@
     </thead>
     {% for produto in produtos %}
     <tbody>
+      
         <td>{{produto.nome_produto}}</td>
         <td>{{produto.quantidade_produto}}</td>
         <td>{{produto.descricao_produto}}</td>

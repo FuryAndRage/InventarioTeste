@@ -12,6 +12,14 @@ class Produto(models.Model):
     venda_produto = models.DecimalField(
         verbose_name='Preco Venda', max_digits=5, decimal_places=2, null=True)
 
+    @property
+    def total_compra_produto(self):
+        return self.objects.aggregate(total=Sum('compra_produto'))['total']
+
+    @property
+    def total_venda_produto(self):
+        return self.objects.aggregate(total=Sum('venda_produto'))['total']
+
     class Meta:
         verbose_name = "Produto"
         verbose_name_plural = "Produtos"
