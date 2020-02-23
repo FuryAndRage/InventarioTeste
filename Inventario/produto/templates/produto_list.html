@@ -3,7 +3,8 @@
 
 {% block main %}
 {% include 'includes/_messages.html' %}
-<div class="row mt-3">
+
+<!--<div class="row mt-3">
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
@@ -23,14 +24,13 @@
     </div>
   </div>
 </div>
+-->
 
 <table class="table table-striped table-responsive-xl  table-borderless mt-3">
     <thead class="thead thead-dark">
         <th>Produto</th>
         <th>Quantidade</th>
         <th>Descricao</th>
-        <th>Preco de Compra</th>
-        <th>Preco de Venda</th>
         <th></th>
     </thead>
     {% for produto in produtos %}
@@ -39,8 +39,6 @@
         <td>{{produto.nome_produto}}</td>
         <td>{{produto.quantidade_produto}}</td>
         <td>{{produto.descricao_produto}}</td>
-        <td>${{produto.compra_produto}}</td>
-        <td>${{produto.venda_produto}}</td>
         <td><a href="{% url 'baixa:baixa_produto' produto.id %}"><button class="btn btn-info">Baixa</button></a></td>
 
     </tbody>

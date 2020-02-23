@@ -7,9 +7,9 @@ class Produto(models.Model):
     quantidade_produto = models.IntegerField(verbose_name='Quantidade')
     descricao_produto = models.TextField(verbose_name='Descricao')
     compra_produto = models.DecimalField(
-        max_digits=5, decimal_places=2, verbose_name='Preco Compra', null=True)
+        max_digits=5, decimal_places=2, verbose_name='Preco Compra',blank = True, null=True)
     venda_produto = models.DecimalField(
-        verbose_name='Preco Venda', max_digits=5, decimal_places=2, null=True)
+        verbose_name='Preco Venda', max_digits=5, decimal_places=2,blank = True, null=True)
 
     @property
     def total_compra_produto(self):
