@@ -41,7 +41,7 @@
         <td>{{produto.descricao_produto}}</td>
         <td>${{produto.compra_produto}}</td>
         <td>${{produto.venda_produto}}</td>
-        <td><a href=""><button class="btn btn-info">Baixa</button></a></td>
+        <td><a href="{% url 'baixa:baixa_produto' produto.id %}"><button class="btn btn-info">Baixa</button></a></td>
 
     </tbody>
     {% endfor %}

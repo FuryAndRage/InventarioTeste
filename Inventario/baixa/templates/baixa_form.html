@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<div class="container-fluid">
+<form method="post">
+	{% csrf_token %}
+	<div class="form-group mt-lg-5">
+    	<label for="id_baixa_produto" class="bmd-label-floating">Produto: <span class="h5 text-muted">{{prod.nome_produto}}</span></p></strong></label>
+   		<input type="text" class="form-control" id="id_baixa_produto" name="baixa_produto" readonly hidden value="{{prod.id}}">
+	</div>
+
+	<div class="form-group mt-lg-5">
+    	<label for="id_quantidade_atual" class="bmd-label-floating">Quantidade atual: <span class="h5 text-muted">{{prod.quantidade_produto}}</span></p></strong></label>
+   		
+	</div>
+
+	<div class="form-group mt-lg-5">
+    	<label for="id_baixa_quantidade" class="bmd-label-floating">Quantidade a dar baixa: <span class="h5 text-muted"></label>
+   		<input type="text" class="form-control" id="id_baixa_quantidade" name="baixa_quantidade" required="" value="">
+	</div>
+
+	<div class="form-group mt-lg-5">
+    	<label for="id_baixa_motivo" class="bmd-label-floating">Motivo: <span class="h5 text-muted"></label>
+   		<textarea class="form-control" id="id_baixa_motivo" rows="3" name="baixa_motivo" required="" value=""></textarea>
+	</div>
+
+	<div class="form-group mt-lg-5">
+    	<label for="id_baixa_data" class="bmd-label-floating">Quantidade: <span class="h5 text-muted"></label>
+   		<input type="text" class="form-control" id="id_baixa_data" name="baixa_data" readonly="" value="{%now 'Y-m-d H:i:s'%}">
+	</div>
+	<div class="form-group">
+    	<input type="text" class="form-control" id="id_user" name="user" hidden value="{{request.user.id}}">
+	</div>
+	<button type="submit" class="btn btn-primary">Baixa</button>
+
+	<table>
+		
+	</table>
+</form>
+</div>
+{% endblock main %}
+
+
+
+<tr>
+	<th>
+		<label for="id_baixa_data">Baixa data:</label>
+	</th>
+	<td>
+		<input type="text" name="baixa_data" value="2020-02-23 22:41:33" required id="id_baixa_data">
+		<input type="hidden" name="initial-baixa_data" value="2020-02-23 22:41:33" id="initial-id_baixa_data">
+		<input type="hidden" name="user" id="id_user" value="{{request.user.id}}">
+	</td>
+</tr>
