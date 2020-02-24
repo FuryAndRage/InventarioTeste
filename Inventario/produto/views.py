@@ -10,11 +10,12 @@ from django.db.models import Sum, Q, Count, Case, When
 
 class ProdutoList(ListView):
     model = Produto
-    template_name = 'produto_list.html'
+    template_name = 'p_list.html'
     context_object_name = 'produtos'
     paginate_by = 10
     ordering = '-id'
-
+    obj = Produto.objects.get(pk=25)
+    print(obj.foto_produto.url)
 
 class ProdutoCreate(CreateView):
     model = Produto

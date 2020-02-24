@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% block main %}
+
+<style type="text/css">
+  
+  .i-img-card{
+    height: 400px;
+    max-width: 700px;
+  }
+
+</style>
+
+ <div class="row mt-3">
+ 	{% for p in produtos  %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              {% if p.foto_produto %}
+
+               <a href="#"><img class="card-img-top i-img-card" style="height:200px;max-width:200px;" src="{{p.foto_produto.url}}" alt=""></a> 
+               {% else %}
+
+               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              {% endif %}
+              
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{p.nome_produto}}</a>
+                </h4>
+                <h5>Quantidade: {{p.quantidade_produto}}</h5>
+                <p class="card-text">{{p.descricao_produto}}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+
+{% endfor %}
+{% endblock main %}
