@@ -31,7 +31,8 @@
                 <p class="card-text">{{p.descricao_produto}}</p>
               </div>
               <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
+                <a href="{% url 'baixa:baixa_produto' p.id %}"><button class="btn btn-primary">Baixa</button></a>
               </div>
             </div>
           </div>

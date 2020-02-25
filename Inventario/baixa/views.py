@@ -27,7 +27,9 @@ def baixa_produto(request, pk):
 				baixa_quantidade = form.cleaned_data['baixa_quantidade'],
 				baixa_motivo = form.cleaned_data['baixa_motivo'],
 				baixa_data = form.cleaned_data['baixa_data']
-				)
+				) 
+			if int(baixa) > qty:
+				message.error(request, 'O quantidade a dar baixa e superior a quantidade em estoque')
 			prod.quantidade_produto= qty - int(baixa)
 			prod.save()
 			dados.save()
