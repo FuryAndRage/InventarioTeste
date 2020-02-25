@@ -14,9 +14,8 @@ class ProdutoList(ListView):
     context_object_name = 'produtos'
     paginate_by = 10
     ordering = '-id'
-    obj = Produto.objects.get(pk=25)
-    print(obj.foto_produto.url)
-
+   
+   
 class ProdutoCreate(CreateView):
     model = Produto
     template_name = 'produto_form.html'
