@@ -10,7 +10,7 @@ class Produto(models.Model):
         max_digits=5, decimal_places=2, verbose_name='Preco Compra',blank = True, null=True)
     venda_produto = models.DecimalField(
         verbose_name='Preco Venda', max_digits=5, decimal_places=2,blank = True, null=True)
-    foto_produto = models.ImageField(upload_to='imagens/%Y/%m', blank=True, verbose_name='Imagem Produto')
+    foto_produto = models.ImageField(upload_to='imagens/%Y/%m', verbose_name='Imagem Produto')
     @property
     def total_compra_produto(self):
         return self.objects.aggregate(total=Sum('compra_produto'))['total']

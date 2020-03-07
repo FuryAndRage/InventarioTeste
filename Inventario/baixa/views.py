@@ -3,7 +3,7 @@ from Inventario.produto.models import Produto
 from .forms import BaixaProdutoForm
 from . models import BaixaProduto
 from django.contrib.auth.models import User
-
+from django.contrib import messages
 def log_baixa(request):
 	template_name = 'log_baixa.html'
 	log = BaixaProduto.objects.all()
@@ -29,7 +29,8 @@ def baixa_produto(request, pk):
 				baixa_data = form.cleaned_data['baixa_data']
 				) 
 			if int(baixa) > qty:
-				message.error(request, 'O quantidade a dar baixa e superior a quantidade em estoque')
+				messages.error(request, 'O quantidade a dar baixa e superior a quantidade em estoque')
+				return redirect('produto:lista_produto')
 			prod.quantidade_produto= qty - int(baixa)
 			prod.save()
 			dados.save()
