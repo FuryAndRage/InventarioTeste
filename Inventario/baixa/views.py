@@ -4,10 +4,11 @@ from .forms import BaixaProdutoForm
 from . models import BaixaProduto
 from django.contrib.auth.models import User
 from django.contrib import messages
+
+
 def log_baixa(request):
-	template_name = 'log_baixa.html'
 	log = BaixaProduto.objects.all()
-	return render(request, template_name, {'log':log})
+	return render(request, 'log_baixa.html', {'log':log})
 
 
 def baixa_produto(request, pk):

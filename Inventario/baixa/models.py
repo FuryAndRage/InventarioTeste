@@ -12,3 +12,5 @@ class BaixaProduto(models.Model):
 
 	def __str__(self):
 		return str(self.baixa_produto)
+
+		

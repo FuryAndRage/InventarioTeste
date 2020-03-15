@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+<table class="table table-striped table-responsive-xl  table-borderless">
+	<thead class="thead-dark">
+		<tr>
+			<th>Data</th>
+			<th>Usuario</th>
+			<th>Produto</th>
+			<th>Quantidade</th>
+			<th>Motivo</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for item in log  %}
+			<tr>
+				<td>{{item.entrada_data}}</td>
+				<td>{{item.user}}</td>
+				<td>{{item.entrada_produto}}</td>
+				<td>{{item.entrada_quantidade}}</td>
+				<td>{{item.entrada_motivo}}</td>
+			</tr>
+		{% endfor %}
+		
+	</tbody>
+
+</table>
+
+	
+{% endblock main %}

@@ -21,6 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('produto/', include('Inventario.produto.urls')),
     path('baixa/', include('Inventario.baixa.urls')),
+    path('entrada/', include('Inventario.entrada.urls')),
     path('', include('Inventario.core.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -40,7 +40,7 @@
         <td>{{produto.quantidade_produto}}</td>
         <td>{{produto.descricao_produto}}</td>
         <td><a href="{% url 'baixa:baixa_produto' produto.id %}"><button class="btn btn-info">Baixa</button></a></td>
-
+        <td><a href="{% url 'entrada:entrada_produto' produto.id %}"><button class="btn btn-info">Entrada</button></a></td>
     </tbody>
     {% endfor %}
 </table>
